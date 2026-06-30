@@ -1,4 +1,4 @@
-const { query } = require('../config/db');
+const { query, getClient } = require('../config/db');
 
 // GET /api/backup/export — full data backup as JSON
 exports.exportBackup = async (req, res) => {
@@ -30,7 +30,7 @@ exports.exportBackup = async (req, res) => {
 
 // POST /api/backup/restore — restore from JSON backup
 exports.restoreBackup = async (req, res) => {
-  const client = require('../config/db').getClient ? await require('../config/db').getClient() : null;
+  const client = await getClient();
   try {
     const { data } = req.body;
     if (!data) return res.status(400).json({ success: false, message: 'Backup data প্রয়োজন।' });
