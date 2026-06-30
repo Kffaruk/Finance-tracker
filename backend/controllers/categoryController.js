@@ -4,7 +4,7 @@ const { query } = require('../config/db');
 exports.getCategories = async (req, res) => {
   try {
     const { type } = req.query;
-    let sql = `SELECT * FROM categories WHERE (user_id = $1 OR user_id IS NULL)`;
+let sql = `SELECT * FROM categories WHERE user_id = $1`;
     const params = [req.user.id];
     if (type) { sql += ` AND type = $2`; params.push(type); }
     sql += ` ORDER BY is_default DESC, name ASC`;
