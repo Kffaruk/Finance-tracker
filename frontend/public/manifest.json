@@ -1,0 +1,12 @@
+{
+  "name": "Finance Tracker",
+  "short_name": "FinTracker",
+  "description": "আপনার অর্থ ব্যবস্থাপনা সহজ করুন",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
